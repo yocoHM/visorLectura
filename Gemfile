@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.4'
 #Gema para encriptar contraseñas
 gem 'bcrypt', '3.1.7' 
+#Gema para subir PDF's
+gem 'paperclip'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
