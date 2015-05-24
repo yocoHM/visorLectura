@@ -25,11 +25,16 @@ class ClasesController < ApplicationController
 	end
 
 	def update
-		
+		if @clase.update(clase_params)
+			flash[:success] = "La clase se actualizó satisfactoriamente"
+			redirect_to clases_path
+		else
+			render :edit
+		end
 	end
 
 	def show
-		
+		@lectura = Lectura.select("lecturas.titulo").where("lecturas.materia_clave = ?", @clase.clave)
 	end
 
 	private

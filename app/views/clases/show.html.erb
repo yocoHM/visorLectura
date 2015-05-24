@@ -1,0 +1,25 @@
+<%= render 'layouts/mensajes' %>
+
+<div class="col-lg-6">
+	<div class="panel panel-default">
+  		<div class="panel-heading clearfix">
+    		<h3 class="panel-title pull-left">Clase</h3>
+    		<div class="btn-group pull-right">
+            	<%= link_to 'Editar', edit_clase_path(@clase), :class => "btn btn-default"%>
+        	</div>
+  		</div>
+
+  	<div class="panel-body">
+  		<label class="control-label" for="nombre">Nombre:</label>
+  		<%= @clase.nombre %><br>
+  		<label class="control-label" for="nombre">Clave:</label>
+		<%= @clase.clave %><br>
+  	</div>
+
+</div>
+
+<h1>Lecturas</h1>
+
+<% @lectura.each do |lectura| %>
+	<h2> <%= link_to "- " + lectura.titulo, "" %> </h2>
+<% end %>

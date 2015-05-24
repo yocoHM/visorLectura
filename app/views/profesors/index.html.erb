@@ -9,7 +9,7 @@
       <th>Matrícula</th>
       <th>Nombre</th> 
       <th>Apellido</th>
-      <th>Clase</th>
+      <th>Materia</th>
 
       <th colspan="3"></th>
     </tr>
@@ -25,8 +25,8 @@
         <%@clase = Clase.select("clases.nombre").where("clases.clave = ?", profesor.materia_clave) %>
 
         <% @clase.each do |clase| %>
-			<td><%=clase.nombre%></td>
-		<% end %>
+			   <td><%=clase.nombre%></td>
+		    <% end %>
 
 
         <td> 
