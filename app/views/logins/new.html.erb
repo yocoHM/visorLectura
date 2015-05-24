@@ -1,0 +1,37 @@
+<h1>Lecturas IPADE</h1>
+<hr/>
+
+
+<%= render 'layouts/mensajes' %>
+
+<div class="row">
+	<div class="well col-md-6 col-md-offset-3">
+		<%= form_tag '/login' do %>
+
+			<%= label_tag :email %>
+			<%= text_field_tag :email %>
+
+			<%= label_tag :contraseña %>
+			<%= password_field_tag :password %>
+
+			<%= submit_tag 'Ingresar', class: 'btn btn-success' %> 
+
+		<% end %>
+	</div>
+</div>
+
+<div class="center">
+ <%= link_to "Registrar cuenta alumno", registro_alumno_path, class: "btn btn-info" %>
+</div><br>
+
+<div class="center">
+ <%= link_to "Nuevo profesor", registro_profesor_path, class: "btn btn-info" %>
+</div><br>
+
+<div class="center">
+ <%= link_to "Nueva materia", registro_clase_path, class: "btn btn-info" %>
+</div><br>
+
+<div class="center">
+ <%= link_to "Nueva lectura", registro_lectura_path, class: "btn btn-info" %>
+</div><br>

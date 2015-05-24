@@ -1,0 +1,31 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'layouts/dropdown_usuario'%>
+
+<h1>Materias</h1>
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th> 
+      <th>Clave</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clases.each do |clase| %>
+      <tr>
+      	<td><%=clase.nombre%></td>
+        <td><%=clase.clave%></td>
+
+        <td> 
+        	<div>
+              	<%= link_to "Abrir", "", class: "btn btn-primary btn-md"%>
+        	</div>
+      	</td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

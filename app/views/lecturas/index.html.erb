@@ -1,0 +1,35 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'layouts/dropdown_usuario'%>
+
+<h1>Lecturas</h1>
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th>Caso</th> 
+      <th>Tema</th>
+      <th>Matricula asociada del profesor</th>
+      <th>Clave asociada de la clase</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lecturas.each do |lectura| %>
+      <tr>
+      	<td><%=lectura.titulo%></td>
+        <td><%=lectura.tema%></td>
+        <td><%=lectura.matricula%></td>
+        <td><%=lectura.materia_clave%></td>
+
+        <td> 
+        	<div>
+              	<%= link_to "Abrir", "", class: "btn btn-primary btn-md"%>
+        	</div>
+      	</td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

@@ -1,0 +1,27 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'compartido/errores', obj: @alumno %>
+
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">
+		<%= form_for @alumno do |f| %>
+			<%= f.label :matricula %> 
+			<%= f.text_field :matricula %>
+
+			<%= f.label :nombre %>
+			<%= f.text_field :nombre %>
+
+			<%= f.label :apellido %>
+			<%= f.text_field :apellido %>
+
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+
+			<%= f.label :contraseña %>
+			<%= f.password_field :password %>
+
+			<%= f.submit('Agregar alumno', class: "btn btn-success") %> 
+
+		 <%end%>
+	</div>
+</div>

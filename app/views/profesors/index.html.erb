@@ -1,0 +1,41 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'layouts/dropdown_usuario'%>
+
+<h1>Profesores</h1>
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th>Matrícula</th>
+      <th>Nombre</th> 
+      <th>Apellido</th>
+      <th>Clase</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profesors.each do |profesor| %>
+      <tr>
+      	<td><%=profesor.matricula%></td>
+        <td><%= profesor.nombre %></td>
+        <td><%= profesor.apellido %></td>
+
+        <%@clase = Clase.select("clases.nombre").where("clases.clave = ?", profesor.materia_clave) %>
+
+        <% @clase.each do |clase| %>
+			<td><%=clase.nombre%></td>
+		<% end %>
+
+
+        <td> 
+        	<div>
+              	<%= link_to "Abrir", profesor, class: "btn btn-primary btn-md"%>
+        	</div>
+      	</td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

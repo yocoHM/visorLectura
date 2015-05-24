@@ -1,0 +1,10 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'layouts/dropdown_usuario'%>
+
+<div class="jumbotron">
+  <h1>Buscar lecturas por:</h1>
+  <p><%= link_to "Profesor", profesors_path, class: "btn btn-primary btn-lg"%></p>
+  <p><%= link_to "Materia", clases_path, class: "btn btn-primary btn-lg"%></p>
+  <p><%= link_to "Título", lecturas_path, class: "btn btn-primary btn-lg"%></p>
+</div>

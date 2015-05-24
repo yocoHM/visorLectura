@@ -1,0 +1,13 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'layouts/dropdown_usuario'%>
+
+<h1>Alumnos:</h1>
+
+<% @alumnos.each do |alumno| %>
+
+<h2>Nombre: <%=alumno.nombre%></h2>
+<h3>Matrícula: <%=alumno.matricula%></h3>
+<h4>Email: <%=alumno.email%></h4>
+
+<% end %>

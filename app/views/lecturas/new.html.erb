@@ -1,0 +1,28 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'compartido/errores', obj: @lectura %>
+
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">
+		<%= form_for @lectura do |f| %>
+		
+		<%= f.hidden_field :matricula %>
+		<%= f.hidden_field :materia_clave %>
+
+		<%= f.label :caso %> 
+		<%= f.text_field :titulo %>
+
+		<%= f.label :tema %>
+		<%= f.text_field :tema %>
+
+		<%= f.label :profesor %>
+  		<%= f.collection_select(:matricula, Profesor.all, :matricula, :nombre) %>
+
+  		<%= f.label :Clase %>
+  		<%= f.collection_select(:materia_clave, Clase.all, :clave, :nombre) %>
+
+		<%= f.submit('Agregar lectura', class: "btn btn-success") %> 
+
+	 	<%end%>
+	</div>
+</div>

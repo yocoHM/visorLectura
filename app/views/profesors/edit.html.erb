@@ -1,0 +1,32 @@
+<%= render 'layouts/mensajes' %>
+
+<%= render 'compartido/errores', obj: @profesor %>
+
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">
+		<%= form_for @profesor do |f| %>
+
+			<%= f.hidden_field :materia_clave %>
+
+			<%= f.label :matricula %>
+			<%= f.text_field :matricula %>
+
+			<%= f.label :nombre %>
+			<%= f.text_field :nombre %>
+
+			<%= f.label :apellido %>
+			<%= f.text_field :apellido %>
+
+			<%= f.label :materia_impartida %>
+			<%= f.collection_select(:materia_clave, Clase.all, :clave, :nombre) %>
+
+			<!--
+			<#%= f.label :email %>
+			<#%= f.email_field :email %>
+			-->
+
+			<%= f.submit('Editar profesor', class: "btn btn-success") %>
+
+		 <%end%>
+	</div>
+</div>
