@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522190326) do
+ActiveRecord::Schema.define(version: 20150524172459) do
 
   create_table "alumno_clases", force: :cascade do |t|
     t.string "alumno_matricula"
@@ -32,10 +32,14 @@ ActiveRecord::Schema.define(version: 20150522190326) do
   end
 
   create_table "lecturas", force: :cascade do |t|
-    t.string "titulo"
-    t.string "tema"
-    t.string "matricula"
-    t.string "materia_clave"
+    t.string   "titulo"
+    t.string   "tema"
+    t.string   "matricula"
+    t.string   "materia_clave"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
   end
 
   create_table "profesor_alumnos", force: :cascade do |t|

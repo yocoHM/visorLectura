@@ -26,7 +26,12 @@ class LecturasController < ApplicationController
 	end
 
 	def update
-		
+		if @lectura.update(lectura_params)
+			flash[:success] = "La lectura se actualizó satisfactoriamente"
+			redirect_to lecturas_path
+		else
+			render :edit
+		end
 	end
 
 	def show
@@ -36,10 +41,10 @@ class LecturasController < ApplicationController
 	private
 
 		def lectura_params
-			params.require(:lectura).permit(:titulo, :tema, :matricula, :materia_clave)
+			params.require(:lectura).permit(:titulo, :tema, :matricula, :materia_clave, :pdf)
 		end
 
-		def set_clase
+		def set_lectura
 			@lectura = Lectura.find(params[:id])
 		end
 
